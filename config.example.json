@@ -1,0 +1,23 @@
+{
+  "partition_columns": [
+    "anio",
+    "mes",
+    "dia",
+    "year",
+    "month",
+    "day",
+    "ingestion_year",
+    "ingestion_month",
+    "ingestion_day"
+  ],
+  "hive_max_joins": 1,
+  "spark_max_joins": 2,
+  "temp_prefixes": ["IN_", "TMP_", "TEMP_", "AGG_"],
+  "spark_prefixes": ["in_", "tmp_", "temp_", "agg_", "df_"],
+  "storage_formats": ["PARQUET", "ORC"],
+  "rules": {
+    "HIVE-PARTITION-FILTER": {"severity": "error"},
+    "SPARK-PARTITION-FILTER": {"severity": "warning", "enabled": true},
+    "HIVE-SMALL-FILES": {"enabled": false}
+  }
+}
